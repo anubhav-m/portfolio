@@ -35,7 +35,7 @@ Read quickly in a browser tab opened from a resume, LinkedIn, or a job applicati
 - Phone number is never shown.
 - Owner-supplied portrait: `my_photo.jpeg`, served as `public/anubhav-*.webp/jpg`.
 - Light and dark themes are both required (owner request), following the OS setting by default, with a manual toggle.
-- The GATE line was not supplied and is omitted. The site domain is not decided yet, so canonical and absolute OG URLs are pending.
+- The GATE line was not supplied and is omitted. Live at https://anubhav-mishra-dev.vercel.app/ (Vercel, deploys from `main`); canonical and OG URLs use it.
 - Fully responsive down to 320px, with reduced-motion support, semantic HTML, keyboard access, visible focus, good contrast, SEO metadata, and a favicon.
 
 ## Brand Commitments
