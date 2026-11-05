@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anubhav Mishra · LLM systems, measured</title>
+    <meta
+      name="description"
+      content="Anubhav Mishra, BTech Computer Science (Batch 2027). I build LLM systems and measure whether they actually work: function-calling agents, RAG, and evaluation suites with before/after results."
+    />
+    <meta name="author" content="Anubhav Mishra" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#F5F6F3" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0E1215" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="Anubhav Mishra · LLM systems, measured" />
+    <meta
+      property="og:description"
+      content="I build LLM systems and measure whether they actually work."
+    />
+    <!--
+      TODO when the site has a domain: replace /og.jpg with the absolute URL
+      (https://<your-domain>/og.jpg) in both image tags, and add
+      <link rel="canonical" href="https://<your-domain>/" /> and
+      <meta property="og:url" content="https://<your-domain>/" />.
+      Social scrapers ignore relative image URLs.
+    -->
+    <meta property="og:image" content="/og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Anubhav Mishra: I build LLM systems and measure whether they actually work." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="/og.jpg" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Anubhav Mishra",
+        "description": "BTech Computer Science, Batch 2027. Builds and evaluates LLM systems.",
+        "email": "mailto:mishra.anubhav108@gmail.com",
+        "sameAs": [
+          "https://github.com/anubhav-m",
+          "https://www.linkedin.com/in/anubhav--m/"
+        ]
+      }
+    </script>
+
+    <!-- Apply a saved theme before first paint to avoid a flash. -->
+    <script>
+      try {
+        var t = localStorage.getItem('theme')
+        if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

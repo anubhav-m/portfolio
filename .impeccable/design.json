@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-05T00:00:00Z",
+  "title": "Design System: Anubhav Mishra · LLM systems, measured",
+  "extensions": {
+    "colorMeta": {
+      "seal": { "role": "primary", "displayName": "Seal Green", "canonical": "#0a7a4f", "tonalRamp": ["oklch(18% 0.03 160)", "oklch(28% 0.06 160)", "oklch(38% 0.09 160)", "oklch(51% 0.12 160)", "oklch(62% 0.13 160)", "oklch(72% 0.11 160)", "oklch(84% 0.07 160)", "oklch(95% 0.02 160)"] },
+      "seal-dark": { "role": "primary", "displayName": "Seal Green (lightbox)", "canonical": "#3fbf86", "tonalRamp": ["oklch(18% 0.03 160)", "oklch(28% 0.06 160)", "oklch(38% 0.09 160)", "oklch(51% 0.12 160)", "oklch(62% 0.13 160)", "oklch(72% 0.13 160)", "oklch(84% 0.08 160)", "oklch(95% 0.02 160)"] },
+      "paper": { "role": "neutral", "displayName": "Certificate Paper", "canonical": "#f5f6f3", "tonalRamp": ["oklch(15% 0.006 130)", "oklch(27% 0.006 130)", "oklch(39% 0.006 130)", "oklch(51% 0.006 130)", "oklch(63% 0.006 130)", "oklch(75% 0.006 130)", "oklch(87% 0.005 130)", "oklch(97% 0.004 130)"] },
+      "paper-dark": { "role": "neutral", "displayName": "Lightbox Ground", "canonical": "#0e1215" },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#11161d", "tonalRamp": ["oklch(15% 0.015 250)", "oklch(25% 0.015 250)", "oklch(36% 0.014 250)", "oklch(48% 0.013 250)", "oklch(60% 0.011 250)", "oklch(72% 0.009 250)", "oklch(84% 0.006 250)", "oklch(95% 0.003 250)"] },
+      "ink-dark": { "role": "neutral", "displayName": "Paper-White Ink", "canonical": "#e8ebe7" },
+      "muted": { "role": "neutral", "displayName": "Faded Ink", "canonical": "#525a63" },
+      "muted-dark": { "role": "neutral", "displayName": "Faded Ink (lightbox)", "canonical": "#9ba4a1" },
+      "rule": { "role": "neutral", "displayName": "Ruling Grey", "canonical": "#b8beb8" },
+      "rule-dark": { "role": "neutral", "displayName": "Ruling Grey (lightbox)", "canonical": "#424a4e" },
+      "hair": { "role": "neutral", "displayName": "Hairline", "canonical": "#dcdfda" },
+      "hair-dark": { "role": "neutral", "displayName": "Hairline (lightbox)", "canonical": "#242b2f" },
+      "on-seal": { "role": "neutral", "displayName": "On Seal", "canonical": "#ffffff" },
+      "on-seal-dark": { "role": "neutral", "displayName": "On Seal (lightbox)", "canonical": "#06110c" },
+      "on-ink": { "role": "neutral", "displayName": "On Ink", "canonical": "#f5f6f3" },
+      "on-ink-dark": { "role": "neutral", "displayName": "On Ink (lightbox)", "canonical": "#0e1215" }
+    },
+    "themes": {
+      "mechanism": "CSS custom properties on :root (--paper, --ink, --muted, --rule, --hair, --seal, --on-seal, --on-ink). Dark values apply under :root[data-theme='dark'] or prefers-color-scheme: dark without data-theme='light'. A pre-paint inline script restores the saved choice from localStorage.",
+      "light": { "--paper": "#f5f6f3", "--ink": "#11161d", "--muted": "#525a63", "--rule": "#b8beb8", "--hair": "#dcdfda", "--seal": "#0a7a4f", "--on-seal": "#ffffff", "--on-ink": "#f5f6f3" },
+      "dark": { "--paper": "#0e1215", "--ink": "#e8ebe7", "--muted": "#9ba4a1", "--rule": "#424a4e", "--hair": "#242b2f", "--seal": "#3fbf86", "--on-seal": "#06110c", "--on-ink": "#0e1215" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "The subject's name only; Archivo 800 at width 116%." },
+      "statement": { "displayName": "Statement", "purpose": "The single claim under test; condensed to width 94%, max 27ch." },
+      "headline": { "displayName": "Headline", "purpose": "Section and contact headings; 2rem stepping to 2.5rem at md." },
+      "title": { "displayName": "Title", "purpose": "Project record titles." },
+      "document-title": { "displayName": "Document Title", "purpose": "The certificate's name in the top rule; uppercase, widely tracked, width 125%; one per page." },
+      "body": { "displayName": "Body", "purpose": "Bullets, achievements, skills, result captions; max 68-70ch." },
+      "data": { "displayName": "Data", "purpose": "Result readings; Red Hat Mono, tabular, slashed zero; denominator in faded ink." },
+      "label": { "displayName": "Label", "purpose": "Field labels and list group names (uppercase); margin metadata, conditions and run readings at the same size in sentence case." }
+    },
+    "shadows": [],
+    "borders": [
+      { "name": "section-rule", "value": "2px solid var(--ink)", "purpose": "Opens the header and every section." },
+      { "name": "field-rule", "value": "1px solid var(--ink)", "purpose": "Frames link cells, buttons, the run switch, the photo, and starts lists." },
+      { "name": "record-rule", "value": "1px solid var(--rule)", "purpose": "Separates project records, the margin column edge, the statement divider." },
+      { "name": "row-rule", "value": "1px solid var(--hair)", "purpose": "Divides rows inside lists." },
+      { "name": "focus-ring", "value": "outline: 2px solid var(--seal); outline-offset: 3px", "purpose": "Every focusable element." }
+    ],
+    "motion": [
+      { "name": "print-cell", "value": "420ms cubic-bezier(0.16, 1, 0.3, 1) both; from scaleY(0.35) opacity 0.4; transform-origin bottom; delay calc(var(--i) * 11ms)", "purpose": "Result cells re-print when the run switch changes. Only under prefers-reduced-motion: no-preference." },
+      { "name": "color-transition", "value": "Tailwind transition-colors (150ms cubic-bezier(0.4, 0, 0.2, 1))", "purpose": "Hover fills and text colour changes on links and buttons." },
+      { "name": "smooth-scroll", "value": "scroll-behavior: smooth", "purpose": "Anchor navigation; only under prefers-reduced-motion: no-preference." }
+    ],
+    "breakpoints": [
+      { "name": "xs", "value": "360px" },
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "container", "value": "84rem" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Link Cell",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one solid action (Resume), printed in ink inside a ruled strip; hover fills seal.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\"><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"square\" stroke-linejoin=\"miter\" aria-hidden=\"true\"><path d=\"M6 3h8l4 4v14H6z\"/><path d=\"M14 3v4h4M9 12h6M9 16h6\"/></svg>Resume on request</a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 10px 16px; background: var(--ink, #11161d); color: var(--on-ink, #f5f6f3); border: 1px solid var(--ink, #11161d); border-radius: 0; font-family: 'Archivo Variable', ui-sans-serif, system-ui, sans-serif; font-size: 0.875rem; font-weight: 600; text-decoration: none; transition: background-color 150ms, color 150ms; } .ds-btn-primary:hover { background: var(--seal, #0a7a4f); border-color: var(--ink, #11161d); color: var(--on-seal, #ffffff); } .ds-btn-primary:focus-visible { outline: 2px solid var(--seal, #0a7a4f); outline-offset: 3px; }"
+    },
+    {
+      "name": "Ruled Link Strip",
+      "kind": "nav",
+      "refersTo": "link-cell-hover",
+      "description": "Resume, GitHub and LinkedIn as one ruled strip of shared-border fields.",
+      "html": "<ul class=\"ds-strip\"><li><a class=\"ds-strip-cell ds-strip-solid\" href=\"#\">Resume on request</a></li><li><a class=\"ds-strip-cell\" href=\"#\">GitHub <svg viewBox=\"0 0 24 24\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"square\" aria-hidden=\"true\"><path d=\"M7 17 17 7M8 7h9v9\"/></svg></a></li><li><a class=\"ds-strip-cell\" href=\"#\">LinkedIn <svg viewBox=\"0 0 24 24\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"square\" aria-hidden=\"true\"><path d=\"M7 17 17 7M8 7h9v9\"/></svg></a></li></ul>",
+      "css": ".ds-strip { display: inline-grid; grid-template-columns: auto auto auto; list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink, #11161d); border-left: 1px solid var(--ink, #11161d); } .ds-strip li { border-right: 1px solid var(--ink, #11161d); border-bottom: 1px solid var(--ink, #11161d); } .ds-strip-cell { display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 10px 16px; font-family: 'Archivo Variable', ui-sans-serif, system-ui, sans-serif; font-size: 0.875rem; color: var(--ink, #11161d); text-decoration: none; transition: background-color 150ms, color 150ms; } .ds-strip-cell:hover { background: var(--hair, #dcdfda); } .ds-strip-solid { background: var(--ink, #11161d); color: var(--on-ink, #f5f6f3); font-weight: 600; } .ds-strip-solid:hover { background: var(--seal, #0a7a4f); color: var(--on-seal, #ffffff); } .ds-strip-cell:focus-visible { outline: 2px solid var(--seal, #0a7a4f); outline-offset: 3px; }"
+    },
+    {
+      "name": "Ruled Outline Link",
+      "kind": "button",
+      "refersTo": "button-ruled",
+      "description": "Repository link: mono path in a 1px ink frame; hover inverts to ink.",
+      "html": "<a class=\"ds-btn-ruled\" href=\"#\"><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"square\" aria-hidden=\"true\"><path d=\"m8 7-5 5 5 5M16 7l5 5-5 5\"/></svg>anubhav-m/collections-agent<svg viewBox=\"0 0 24 24\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"square\" aria-hidden=\"true\"><path d=\"M7 17 17 7M8 7h9v9\"/></svg></a>",
+      "css": ".ds-btn-ruled { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--ink, #11161d); border-radius: 0; color: var(--ink, #11161d); background: transparent; font-family: 'Red Hat Mono Variable', ui-monospace, monospace; font-size: 0.8125rem; text-decoration: none; transition: background-color 150ms, color 150ms; } .ds-btn-ruled:hover { background: var(--ink, #11161d); color: var(--on-ink, #f5f6f3); } .ds-btn-ruled:focus-visible { outline: 2px solid var(--seal, #0a7a4f); outline-offset: 3px; }"
+    },
+    {
+      "name": "Run Switch",
+      "kind": "custom",
+      "refersTo": "run-switch-option",
+      "description": "Before/After segmented radio control; the active run is printed solid ink.",
+      "html": "<fieldset class=\"ds-run\"><legend class=\"ds-sr\">Show results from run</legend><div class=\"ds-run-frame\"><label class=\"ds-run-opt\"><input type=\"radio\" name=\"ds-run\" class=\"ds-sr\"><span class=\"ds-run-label\">Before</span><span class=\"ds-run-hint\">Baseline · RAG off</span></label><label class=\"ds-run-opt\"><input type=\"radio\" name=\"ds-run\" class=\"ds-sr\" checked><span class=\"ds-run-label\">After</span><span class=\"ds-run-hint\">After fixes · RAG on</span></label></div></fieldset>",
+      "css": ".ds-run { border: 0; margin: 0; padding: 0; min-width: 0; } .ds-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; } .ds-run-frame { display: inline-flex; border: 1px solid var(--ink, #11161d); } .ds-run-opt { position: relative; display: flex; flex-direction: column; padding: 8px 20px; cursor: pointer; color: var(--ink, #11161d); transition: background-color 150ms, color 150ms; } .ds-run-opt:hover { background: var(--hair, #dcdfda); } .ds-run-opt:has(:checked) { background: var(--ink, #11161d); color: var(--on-ink, #f5f6f3); } .ds-run-opt:has(:focus-visible) { outline: 2px solid var(--seal, #0a7a4f); outline-offset: 2px; } .ds-run-label { font-family: 'Archivo Variable', ui-sans-serif, sans-serif; font-size: 0.875rem; font-weight: 600; } .ds-run-hint { font-family: 'Red Hat Mono Variable', ui-monospace, monospace; font-size: 0.6875rem; color: var(--muted, #525a63); } .ds-run-opt:has(:checked) .ds-run-hint { color: inherit; opacity: 0.8; }"
+    },
+    {
+      "name": "Result Cell Strip",
+      "kind": "custom",
+      "refersTo": "result-cell-pass",
+      "description": "One square cell per test case: solid seal passed, ink outline failed; re-prints on run change.",
+      "html": "<div class=\"ds-strip-cells\" style=\"--cols:12\"><span class=\"ds-cell ds-pass\" style=\"--i:0\"></span><span class=\"ds-cell ds-pass\" style=\"--i:1\"></span><span class=\"ds-cell ds-pass\" style=\"--i:2\"></span><span class=\"ds-cell ds-pass\" style=\"--i:3\"></span><span class=\"ds-cell ds-pass\" style=\"--i:4\"></span><span class=\"ds-cell ds-pass\" style=\"--i:5\"></span><span class=\"ds-cell ds-pass\" style=\"--i:6\"></span><span class=\"ds-cell ds-pass\" style=\"--i:7\"></span><span class=\"ds-cell ds-pass\" style=\"--i:8\"></span><span class=\"ds-cell ds-pass\" style=\"--i:9\"></span><span class=\"ds-cell ds-fail\" style=\"--i:10\"></span><span class=\"ds-cell ds-fail\" style=\"--i:11\"></span></div>",
+      "css": ".ds-strip-cells { display: grid; grid-template-columns: repeat(var(--cols), minmax(0, 1fr)); gap: 3px; } .ds-cell { display: block; height: 28px; border-radius: 0; } .ds-pass { background: var(--seal, #0a7a4f); } .ds-fail { background: transparent; border: 2px solid var(--ink, #11161d); box-sizing: border-box; } @keyframes ds-print-cell { from { transform: scaleY(0.35); opacity: 0.4; } to { transform: scaleY(1); opacity: 1; } } @media (prefers-reduced-motion: no-preference) { .ds-cell { animation: ds-print-cell 420ms cubic-bezier(0.16, 1, 0.3, 1) both; animation-delay: calc(var(--i) * 11ms); transform-origin: bottom; } }"
+    },
+    {
+      "name": "Field Row",
+      "kind": "card",
+      "refersTo": "label",
+      "description": "The certificate's field: mono uppercase label beside its value, divided by a hairline.",
+      "html": "<dl class=\"ds-fields\"><div class=\"ds-field\"><dt>Languages</dt><dd>Python, SQL, JavaScript, C++</dd></div><div class=\"ds-field\"><dt>Backend</dt><dd>FastAPI, Node.js, Express.js</dd></div></dl>",
+      "css": ".ds-fields { margin: 0; border-top: 1px solid var(--ink, #11161d); } .ds-field { display: grid; grid-template-columns: 7.5rem 1fr; column-gap: 24px; padding: 16px 0; border-bottom: 1px solid var(--hair, #dcdfda); } .ds-field dt { font-family: 'Red Hat Mono Variable', ui-monospace, monospace; font-size: 0.75rem; line-height: 1.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted, #525a63); } .ds-field dd { margin: 0; font-family: 'Archivo Variable', ui-sans-serif, sans-serif; font-size: 1rem; line-height: 1.625; color: var(--ink, #11161d); }"
+    },
+    {
+      "name": "Theme Toggle",
+      "kind": "button",
+      "refersTo": "icon-button",
+      "description": "Square 36px ruled icon button; hover inverts to ink.",
+      "html": "<button type=\"button\" class=\"ds-icon-btn\" aria-label=\"Switch to dark theme\"><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"square\" stroke-linejoin=\"miter\" aria-hidden=\"true\"><path d=\"M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5Z\"/></svg></button>",
+      "css": ".ds-icon-btn { display: grid; place-items: center; width: 36px; height: 36px; padding: 0; border: 1px solid var(--ink, #11161d); border-radius: 0; background: transparent; color: var(--ink, #11161d); cursor: pointer; transition: background-color 150ms, color 150ms; } .ds-icon-btn:hover { background: var(--ink, #11161d); color: var(--on-ink, #f5f6f3); } .ds-icon-btn:focus-visible { outline: 2px solid var(--seal, #0a7a4f); outline-offset: 3px; }"
+    },
+    {
+      "name": "Recorded-Condition Note",
+      "kind": "custom",
+      "refersTo": "seal",
+      "description": "A caveat stating the conditions a project was built under: seal-bordered mono text.",
+      "html": "<p class=\"ds-note\">Simulation using fictional data. Not deployed or production software.</p>",
+      "css": ".ds-note { max-width: 30ch; margin: 0; padding: 8px 12px; border: 2px solid var(--seal, #0a7a4f); border-radius: 0; color: var(--seal, #0a7a4f); font-family: 'Red Hat Mono Variable', ui-monospace, monospace; font-size: 0.75rem; font-weight: 500; line-height: 1.625; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Certificate of Measurement",
+    "overview": "The page is a calibration certificate. Every claim is a field on a ruled form, every number states the conditions it was measured under, and the evidence is a strip of square pass/fail cells printed in one flat green. The sheet is cool paper with near-black ink rules; the only colour that is not ink is the seal.\n\nDensity is that of a test report: a fixed margin column carries record metadata in small mono type, a label column names each field, and the value column holds the content. Heavy, expanded Archivo carries the fields that must be read from across a room (the subject's name, section headings); Red Hat Mono carries the data. Dark mode is not a different design, it is the same certificate laid on a lightbox: ink ground, paper-white type, seal green lifted for luminance.\n\nNothing floats. There are no shadows, no radii on rectangles, no gradients, no tints. Depth and grouping come from rule weight alone (2px ink between sections, 1px ink around fields, hairlines between rows). The one curved object is the seal itself, a rotated circular stamp, which is why it reads as a stamp.",
+    "keyCharacteristics": [
+      "Ruled field grid: margin column | label column | value, collapsing to stacked label-over-value on narrow screens.",
+      "One accent, seal green, printed flat at full strength; never tinted, never a gradient.",
+      "Square corners everywhere except the circular seal.",
+      "Archivo on its width axis (94% to 125%) for fields and headings; Red Hat Mono, tabular and slashed-zero, for data, conditions, and record metadata.",
+      "Signature motion: the Before/After run switch re-prints every result cell, staggered, and snaps instantly under reduced motion."
+    ],
+    "rules": [
+      { "name": "The Flat Seal Rule", "body": "Seal green appears at 100% or not at all: no alpha, no tints, no gradients, no green-on-green. Hover and pressed states move between ink, hair, and seal; they never lighten the seal.", "section": "colors" },
+      { "name": "The Green Means Passed Rule", "body": "Seal green is reserved for measured success, the stamp, and interaction feedback (focus, hover, selection). It is never decoration, never a section fill, never a heading colour.", "section": "colors" },
+      { "name": "The Mono Is Data Rule", "body": "Red Hat Mono is for numbers, conditions, repository paths, email addresses, field labels, and record metadata. Prose, headings, and buttons are Archivo.", "section": "typography" },
+      { "name": "The Width Axis Rule", "body": "Hierarchy is set by weight and font-stretch together: expand (110% to 125%) for headings and the document title, condense (94%) for the long statement. Do not reach for a second display face.", "section": "typography" },
+      { "name": "The Rule Weight Rule", "body": "Structure is told by line weight: 2px ink opens the header and each section, 1px ink frames fields and starts lists, 1px ruling grey separates records, hairline separates rows. Pick the weight by structural level, not by taste.", "section": "elevation" },
+      { "name": "The Invert, Don't Lift Rule", "body": "An active or primary element becomes a solid ink (or seal on hover) fill with paper type. Nothing rises, glows, or casts a shadow.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do set every claim as a field: a mono label in the label column, the value beside it, separated by rules.",
+      "Do state the conditions next to every number, in mono, in faded ink.",
+      "Do use seal green at full strength only, for passes, the stamp, focus, selection, and hover feedback.",
+      "Do keep every rectangle square (0px) and every icon a square-capped 1.6-stroke SVG.",
+      "Do choose rule weight by structural level: 2px ink for sections, 1px ink for fields and list tops, hairline for rows.",
+      "Do gate every movement behind `prefers-reduced-motion: no-preference`; the cell re-print snaps when motion is reduced.",
+      "Do keep dark mode as the same sheet on a lightbox: swap the token values, never the layout or the accent's role."
+    ],
+    "donts": [
+      "Don't add shadows, gradients, glows, or tinted/transparent seal green.",
+      "Don't round rectangles; the circular seal is the only curve.",
+      "Don't set prose, headings, or buttons in Red Hat Mono, or bring in a second display face.",
+      "Don't put small uppercase labels above headings; labels live in the label or margin column beside their value.",
+      "Don't introduce a second accent colour or use green for anything that is not a pass, the stamp, or interaction feedback.",
+      "Don't use Unicode glyphs as icons.",
+      "Don't wrap content in cards; group with rules."
+    ]
+  }
+}

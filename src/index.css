@@ -1,0 +1,135 @@
+@import 'tailwindcss';
+
+/* ---------- Tokens ----------
+   Light: certificate paper and ink. Dark: the same sheet on a lightbox.
+   One accent, the seal green, printed flat (no tints, no gradients). */
+:root {
+  --paper: #f5f6f3;
+  --ink: #11161d;
+  --muted: #525a63;
+  --rule: #b8beb8;
+  --hair: #dcdfda;
+  --seal: #0a7a4f;
+  --on-seal: #ffffff;
+  --on-ink: #f5f6f3;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --paper: #0e1215;
+    --ink: #e8ebe7;
+    --muted: #9ba4a1;
+    --rule: #424a4e;
+    --hair: #242b2f;
+    --seal: #3fbf86;
+    --on-seal: #06110c;
+    --on-ink: #0e1215;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  --paper: #0e1215;
+  --ink: #e8ebe7;
+  --muted: #9ba4a1;
+  --rule: #424a4e;
+  --hair: #242b2f;
+  --seal: #3fbf86;
+  --on-seal: #06110c;
+  --on-ink: #0e1215;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-rule: var(--rule);
+  --color-hair: var(--hair);
+  --color-seal: var(--seal);
+  --color-on-seal: var(--on-seal);
+  --color-on-ink: var(--on-ink);
+  --font-sans: 'Archivo Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Red Hat Mono Variable', ui-monospace, 'SFMono-Regular', monospace;
+}
+
+/* ---------- Base ---------- */
+@layer base {
+  html {
+    background: var(--paper);
+    -webkit-text-size-adjust: 100%;
+    scrollbar-color: var(--rule) var(--paper);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-feature-settings: 'ss01';
+    caret-color: var(--seal);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: var(--seal);
+    color: var(--on-seal);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--seal);
+    outline-offset: 3px;
+  }
+
+  a {
+    text-underline-offset: 0.22em;
+    text-decoration-thickness: 1px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p,
+  li,
+  dd {
+    text-wrap: pretty;
+  }
+
+  [id] {
+    scroll-margin-top: 1.5rem;
+  }
+
+  .font-mono {
+    font-variant-numeric: tabular-nums slashed-zero;
+  }
+}
+
+/* ---------- Signature motion: result cells re-print on run change ---------- */
+@keyframes print-cell {
+  from {
+    transform: scaleY(0.35);
+    opacity: 0.4;
+  }
+  to {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .cell-print {
+    animation: print-cell 420ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: calc(var(--i) * 11ms);
+    transform-origin: bottom;
+  }
+}
